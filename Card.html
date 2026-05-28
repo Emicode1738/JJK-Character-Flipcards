@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <!-- This part is for extra information the browser needs to load the page correctly-->
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Don't shrink the page on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Appears on the web browser tab and search results -->
+    <title>JJK Characters flip cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="viewer">
+        <div class="card-slot">
+          <div class="card active" data-name="Yuji Itadori">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/yuji.jpg" alt="Yuji." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Yuji Itadori.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-name="Megumi Fushiguro">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/megumi.jpg" alt="Megumi." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Megumi Fushiguro.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Nobara Kugisaki">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/nobara.jpg" alt="Nobara." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Nobara Kugisaki.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Panda">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/panda.jpg" alt="Panda." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Panda.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Mei Mei">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/Meimei.jpg" alt="Mei Mei." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Mei Mei.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Toge Inumaki">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/Inumaki.jpg" alt="Inumaki." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Toge Inumaki.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Mai Zenin">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/mai.jpg" alt="Mai." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Mai Zenin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Maki Zenin">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/maki.jpg" alt="Maki." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Maki Zenin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Mechamaru">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/mechamaru.jpg" alt="Mechamaru." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Mechamaru.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-name="Noritoshi Kamo">
+            <div class="card-content">
+              <div class="card-face card-front">
+                <img src="JJk/noritoshi.jpg" alt="Noritoshi." />
+              </div>
+              <div class="card-face flipme card-back">
+                <p>Noritoshi Kamo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="nav-button prev" type="button">← Previous</button>
+          <button class="nav-button next" type="button">Next →</button>
+        </div>
+      </section>
+    </main>
+    <script>
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const prevButton = document.querySelector(".nav-button.prev");
+      const nextButton = document.querySelector(".nav-button.next");
+      let currentIndex = 0;
+
+      function updateCards() {
+        cards.forEach((card, index) => {
+          card.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCards();
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCards();
+      });
+
+      updateCards();
+    </script>
+  </body>
+</html>
