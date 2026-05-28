@@ -21,6 +21,5 @@ I wanted to make something fun with JJK. Started simple with HTML and built up t
 ## Live Demo
 [View Website](https://emicode1738.github.io/JJK-Character-Flipcards/)
 ## 🎞️ Preview
-<video controls class="intro-video">
-  <source src="videos/intro.mp4" type="video/mp4">
-</video>
+## Demo Video
+<video src="jjk.mp4" controls width="600"></video>
